@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityBuddy – Settle into your new city with trusted local help</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: #1a1a2e;
+      background: #f9f9fc;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+      color: white;
+      padding: 80px 0 72px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #1a1a2e;
+      letter-spacing: -0.01em;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f3460;
+    }
+
+    .feature-card p {
+      color: #4a4a5a;
+      font-size: 0.95rem;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+
+    .step {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      flex: 1 1 220px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .step .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #0f3460;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a2e;
+    }
+
+    .step p {
+      color: #4a4a5a;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      background: #0f3460;
+      color: white;
+      text-align: center;
+      padding: 72px 0;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 48px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 12px rgba(233, 69, 96, 0.3);
+    }
+
+    .cta-button:hover {
+      background: #d63850;
+      transform: scale(1.02);
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a2e;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      section {
+        padding: 48px 0;
+      }
+      section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+      }
+      .features-grid {
+        gap: 20px;
+      }
+      .steps {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>CityBuddy connects you with verified local helpers for every setup task in your new city.</h1>
+      <p>Post a task, receive bids from trusted locals, and pay securely only after the job is done.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2>Everything you need to settle in fast</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Task Listing and Bidding</h3>
+          <p>Expats post tasks with description and budget; helpers submit bids with price and timeframe.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Secure Payment Per Task</h3>
+          <p>Payments are held in escrow and released only after task completion and mutual confirmation.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Identity Verification</h3>
+          <p>Both parties must verify ID (passport, national ID) to build trust and safety.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Rating and Review System</h3>
+          <p>After each task, both expat and helper can rate each other, building reputation profiles.</p>
+        </div>
+        <div class="feature-card">
+          <h3>In-App Chat</h3>
+          <p>Real-time messaging for task clarification, updates, and coordination.</p>
+        </div>
+        <div class="feature-card">
+          <h3>City-Onboarding Guides</h3>
+          <p>Curated guides for common tasks (bank account, SIM, registration) to help expats set up quickly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section style="background: #f0f2f8;">
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="number">1</div>
+          <h3>Post your task</h3>
+          <p>Describe what you need help with, set your budget, and choose a timeframe.</p>
+        </div>
+        <div class="step">
+          <div class="number">2</div>
+          <h3>Receive bids from helpers</h3>
+          <p>Verified locals submit offers with their price and availability. Review ratings and profiles.</p>
+        </div>
+        <div class="step">
+          <div class="number">3</div>
+          <h3>Complete and pay</h3>
+          <p>Once the task is done and you confirm, the payment is released securely from escrow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to make your move easier?</h2>
+      <p>Join CityBuddy and get trusted help with apartment leases, bank accounts, SIM cards, and more. Pay only when you are satisfied.</p>
+      <a href="#" class="cta-button">Get started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 CityBuddy. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
