@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreetBox - Monthly Curated Pakistani Street Food Kits</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+      background-color: #faf9f6;
+      color: #1e1e1e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #f97316 0%, #b91c1c 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 24px 72px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.92;
+    }
+
+    .hero .tagline {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border: 1px solid #eae8e3;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #b91c1c;
+    }
+
+    .feature-card p {
+      color: #4a4a4a;
+      font-size: 0.95rem;
+    }
+
+    /* How It Works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      counter-reset: step-counter;
+    }
+
+    .step {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid #eae8e3;
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
+      display: block;
+      width: 48px;
+      height: 48px;
+      background: #f97316;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      border-radius: 50%;
+      line-height: 48px;
+      margin: 0 auto 16px;
+    }
+
+    .step h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #4a4a4a;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 72px 24px;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      opacity: 0.85;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #f97316;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 48px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: #e8630e;
+    }
+
+    .cta-button:active {
+      transform: scale(0.97);
+    }
+
+    /* Footer */
+    .footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .cta-section h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>StreetBox</h1>
+    <p>Each month, a curated kit of authentic street food ingredients and recipes from a different Pakistani city. Recreate iconic local flavors at home.</p>
+    <p class="tagline">For food enthusiasts, diaspora Pakistanis, and adventurous home cooks.</p>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">What's Inside Each Box</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Monthly City Theme</h3>
+          <p>Each month highlights a different Pakistani city (e.g., Lahore, Karachi, Peshawar) with a curated selection of its iconic street food ingredients and a signature dish.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Curated Ingredient Kit</h3>
+          <p>Includes 3-4 essential, hard-to-find ingredients (spices, chutneys, pre-mixes) sourced directly from the featured city, plus a bonus snack or condiment.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Recipe Card & Video Tutorial</h3>
+          <p>A beautifully designed recipe card with step-by-step instructions and a QR code linking to a short video tutorial by a local street food vendor or chef.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Optional Spice Level Customization</h3>
+          <p>Subscribers can choose mild, medium, or hot spice level for the kit, ensuring the dish suits their palate.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Community Recipe Swap & Feedback</h3>
+          <p>A private online group where subscribers share their creations, tips, and photos, and vote on future city themes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #f4f2ec;">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Choose Your Plan</h3>
+          <p>Select a monthly subscription and pick your preferred spice level (mild, medium, or hot).</p>
+        </div>
+        <div class="step">
+          <h3>Receive Your Kit</h3>
+          <p>Each month, a curated box arrives with authentic ingredients, a recipe card, and a video tutorial from a local vendor.</p>
+        </div>
+        <div class="step">
+          <h3>Cook & Share</h3>
+          <p>Follow the guide to recreate the dish, then join the community to swap tips and vote on the next city.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Taste Pakistan's Streets?</h2>
+    <p>Get your first box and explore the vibrant flavors of Lahore, Karachi, Peshawar, and more. No commitment, cancel anytime.</p>
+    <a href="#" class="cta-button">Subscribe Now</a>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      &copy; 2025 StreetBox. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
