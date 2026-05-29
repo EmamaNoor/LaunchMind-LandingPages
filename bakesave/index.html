@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BakeSave – Save food, save money</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1e1e;
+      background: #faf9f6;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: #f3ede5;
+      padding: 80px 0 72px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #2b2b2b;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #4a4a4a;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    .hero .cta-btn {
+      display: inline-block;
+      background: #c73e3e;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 14px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .hero .cta-btn:hover { background: #a52e2e; }
+
+    /* Sections */
+    section { padding: 72px 0; }
+    section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #2b2b2b;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px 24px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2b2b2b;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+    .step {
+      flex: 1 1 200px;
+      max-width: 280px;
+      text-align: center;
+    }
+    .step .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #c73e3e;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #2b2b2b;
+    }
+    .step p {
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #f3ede5;
+      text-align: center;
+      padding: 64px 0;
+    }
+    .cta-section h2 {
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      font-size: 1.1rem;
+      color: #4a4a4a;
+      margin-bottom: 32px;
+    }
+    .cta-section .cta-btn {
+      display: inline-block;
+      background: #c73e3e;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 14px 44px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-section .cta-btn:hover { background: #a52e2e; }
+
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.85rem;
+      color: #8a8a8a;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Fresh pastries at half price. No waste.</h1>
+      <p>BakeSave connects small bakeries with budget-conscious consumers and food waste warriors to sell end-of-day surplus items at a discount, reducing waste and saving money.</p>
+      <a href="#" class="cta-btn">Start saving food</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2>Everything you need to rescue food</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Bakery Onboarding</h3>
+          <p>Simple sign-up for bakeries with verification of business details, location, and operating hours.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Daily Surplus Listing</h3>
+          <p>Bakeries can quickly list leftover items with photos, descriptions, quantities, and discount prices each day.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Real-Time Inventory</h3>
+          <p>Automatically updates available items as users claim and purchase, preventing overselling.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Geolocation Search</h3>
+          <p>Users can browse nearby bakeries with surplus deals on an interactive map or list sorted by distance.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Pickup Ordering</h3>
+          <p>Users can claim and pay for items in-app, receiving a QR code for pickup during specified time windows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section>
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="number">1</div>
+          <h3>Bakeries list surplus</h3>
+          <p>At the end of each day, bakeries post leftover items with a discount price and pickup window.</p>
+        </div>
+        <div class="step">
+          <div class="number">2</div>
+          <h3>Find deals near you</h3>
+          <p>Browse nearby bakeries on the map, see what's available, and claim items in seconds.</p>
+        </div>
+        <div class="step">
+          <div class="number">3</div>
+          <h3>Pick up and enjoy</h3>
+          <p>Pay in the app, get a QR code, and collect your order at the bakery during the pickup time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Stop waste. Start saving.</h2>
+      <p>Join the community that saves money and rescues fresh food from the trash.</p>
+      <a href="#" class="cta-btn">Get the app</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 BakeSave. Reducing food waste, one pastry at a time.
+    </div>
+  </footer>
+
+</body>
+</html>
