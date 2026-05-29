@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeighborCare – Trusted After-School Childcare in Your Neighborhood</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1a2e;
+      background-color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #f8f9ff 0%, #eef1f8 100%);
+      padding: 80px 0 64px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #1a1a2e;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #4a4a6a;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+
+    .hero .cta-btn {
+      display: inline-block;
+      background-color: #4f6ef7;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 12px rgba(79, 110, 247, 0.3);
+    }
+
+    .hero .cta-btn:hover {
+      background-color: #3b5ae0;
+      box-shadow: 0 6px 20px rgba(79, 110, 247, 0.4);
+    }
+
+    /* Sections common */
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #1a1a2e;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: #f9fafc;
+      border-radius: 16px;
+      padding: 32px 24px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1a1a2e;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+      color: #4a4a6a;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .step {
+      background: #ffffff;
+      border: 1px solid #eaeef5;
+      border-radius: 16px;
+      padding: 32px 24px;
+      flex: 1 1 260px;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #4f6ef7;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1a1a2e;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #4a4a6a;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #1a1a2e;
+      color: #ffffff;
+      text-align: center;
+      padding: 72px 0;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 1.15rem;
+      color: #c8cce0;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section .cta-btn {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #1a1a2e;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-section .cta-btn:hover {
+      background-color: #eef1f8;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: #f2f4f8;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b6b8a;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.05rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .step {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Childcare, right next door.</h1>
+      <p>NeighborCare connects busy parents with trusted stay-at-home parents in their neighborhood for flexible, hourly after-school childcare.</p>
+      <a href="#" class="cta-btn">Find a Sitter</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Neighborhood Matching</h3>
+          <p>Automatically matches hiring parents with nearby stay-at-home parents based on location and availability.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Hourly Booking</h3>
+          <p>Allows hiring parents to book care by the hour with real-time availability and instant confirmation.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Background Check Integration</h3>
+          <p>Integrates with third-party background check services to verify all providers before they can accept bookings.</p>
+        </div>
+        <div class="feature-card">
+          <h3>In-App Messaging</h3>
+          <p>Enables secure, in-app communication between hiring parents and providers to discuss details and confirm arrangements.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Payment Processing</h3>
+          <p>Handles secure payments per booking, including automatic payouts to providers and receipts for hiring parents.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Ratings &amp; Reviews</h3>
+          <p>Allows both parties to rate and review each other after each booking to build trust and accountability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #f8f9ff;">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Sign up and set your needs</h3>
+          <p>Busy parents quickly register with their address and child's age. Stay-at-home parents set their after-school availability.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Match and book</h3>
+          <p>Search for providers in your neighborhood, view ratings, background check status, and hourly rates. Book with instant confirmation.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Care and get paid</h3>
+          <p>After each booking, providers receive prompt payments to their bank account. Both parties leave reviews to maintain quality standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to find care you can trust?</h2>
+      <p>Join your neighbors today and get flexible, hourly after-school childcare without the hassle.</p>
+      <a href="#" class="cta-btn">Get Started</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 NeighborCare. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
