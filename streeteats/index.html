@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreetEats</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-subtle: #f7f7f7;
+      --border: #e5e5e5;
+      --text-primary: #111111;
+      --text-secondary: #555555;
+      --text-muted: #888888;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --accent-fg: #ffffff;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --radius: 8px;
+      --max-width: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text-primary); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav { border-bottom: 1px solid var(--border); padding: 18px 0; }
+    nav .container { display: flex; align-items: center; justify-content: space-between; }
+    nav .logo { font-size: 17px; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+    nav .btn-nav { background: var(--accent); color: var(--accent-fg); padding: 9px 20px; border-radius: var(--radius); font-size: 14px; font-weight: 600; text-decoration: none; }
+    nav .btn-nav:hover { background: var(--accent-hover); }
+
+    /* Hero */
+    .hero { padding: 96px 0 80px; text-align: center; }
+    .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--text-primary); max-width: 720px; margin: 0 auto 20px; }
+    .hero p { font-size: 19px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 36px; line-height: 1.6; }
+    .btn-primary { display: inline-block; background: var(--accent); color: var(--accent-fg); padding: 13px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 600; text-decoration: none; }
+    .btn-primary:hover { background: var(--accent-hover); }
+
+    /* Features */
+    .features { padding: 80px 0; background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .features h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 48px; letter-spacing: -0.01em; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; }
+    .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+    .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* How it Works */
+    .how-it-works { padding: 80px 0; }
+    .how-it-works h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 48px; letter-spacing: -0.01em; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .step { padding: 28px 24px; }
+    .step-number { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 12px; }
+    .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+    .step p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* CTA */
+    .cta { padding: 80px 0; background: var(--accent); text-align: center; }
+    .cta h2 { font-size: 32px; font-weight: 700; color: var(--accent-fg); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .cta p { font-size: 17px; color: rgba(255,255,255,0.85); max-width: 480px; margin: 0 auto 32px; }
+    .btn-cta { display: inline-block; background: var(--accent-fg); color: var(--accent); padding: 13px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 700; text-decoration: none; }
+    .btn-cta:hover { opacity: 0.92; }
+
+    /* Footer */
+    footer { padding: 40px 0; text-align: center; border-top: 1px solid var(--border); }
+    footer .logo { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+    footer p { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .hero p { font-size: 16px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">StreetEats</a>
+      <a href="#cta" class="btn-nav">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>StreetEats delivers a monthly subscription box of curated local street food ingredients from a different Pakistani city, enabling foodies, diaspora Pakistanis, and adventurous home cooks to recreate authentic street food experiences at home.</h1>
+      <p>Perfect for foodies, diaspora Pakistanis, and adventurous home cooks who want to explore authentic street food from Pakistan without the hassle of sourcing hard-to-find ingredients.</p>
+      <a href="#cta" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>City-Themed Box Curation</h3>
+          <p>Each month features a different Pakistani city (e.g., Lahore, Karachi, Peshawar) with a curated selection of its iconic street food ingredients, including authentic spices, sauces, and key staples.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Recipe Cards & Video Tutorials</h3>
+          <p>Includes illustrated step-by-step recipe cards for 3-4 dishes per box, plus QR codes linking to video tutorials by local chefs for an immersive cooking experience.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Subscription Management Portal</h3>
+          <p>Online dashboard where users can manage their subscription (pause, skip, cancel, update address, and view upcoming boxes) with flexible monthly, quarterly, or annual plans.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Personalized Flavor Profile Quiz</h3>
+          <p>Onboarding quiz that captures spice tolerance, dietary restrictions, and flavor preferences to tailor box contents and suggest city themes.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Unboxing AR Experience</h3>
+          <p>Augmented reality feature within the app that, when scanning the box, displays city landmarks, street food history, and chef tips, enhancing the unboxing moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">STEP 01</div>
+          <h3>Take Your Flavor Profile Quiz</h3>
+          <p>Start by completing a quick quiz about your spice tolerance, dietary needs, and flavor preferences. This helps us tailor each box to your tastes.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">STEP 02</div>
+          <h3>Receive Your Monthly City Box</h3>
+          <p>Each month, get a curated box of authentic street food ingredients from a featured Pakistani city, complete with recipe cards and video tutorials.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">STEP 03</div>
+          <h3>Cook, Explore, and Connect</h3>
+          <p>Follow the recipes, scan the box for an AR city tour, and recreate iconic street food dishes at home. Manage your subscription easily online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="cta">
+    <div class="container">
+      <h2>Start recreating authentic Pakistani street food at home today.</h2>
+      <p>Join StreetEats and discover the flavors of Pakistan's cities delivered to your door each month.</p>
+      <a href="#cta" class="btn-cta">Get Started</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="logo">StreetEats</div>
+      <p>Authentic Pakistani street food ingredients delivered monthly.</p>
+    </div>
+  </footer>
+</body>
+</html>
