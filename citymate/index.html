@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityMate – Your city, made easy.</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.5;
+      background: #f9f9fc;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: 80px 0 70px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .hero .tagline {
+      margin-top: 12px;
+      font-size: 1.05rem;
+      opacity: 0.75;
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #1a1a2e;
+    }
+
+    /* Features grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #0f3460;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #3d3d56;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .step {
+      flex: 1 1 260px;
+      max-width: 320px;
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      padding: 32px 20px 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #0f3460;
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a2e;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #3d3d56;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #0f3460;
+      color: white;
+      text-align: center;
+      padding: 64px 0;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 32px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 48px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: default;
+    }
+
+    .cta-button:hover {
+      background: #d63851;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a2e;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px 0;
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: rgba(255,255,255,0.8);
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .steps {
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Your city, made easy.</h1>
+      <p>CityMate connects newly arrived expats with verified local helpers to handle essential setup tasks in a new city, paid per task.</p>
+      <p class="tagline">From housing tours to bank setup. Skip the stress, get real help.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Everything you need to settle in</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Expat Onboarding</h3>
+          <p>Guided profile setup capturing arrival date, languages, and immediate needs; includes identity verification and a welcome checklist.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Task Browsing & Booking</h3>
+          <p>Expats can browse helpers by task categories (e.g., housing tours, bank setup, SIM card) and location, view profiles, and book a task with fixed fee or hourly rate.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Helper Registration & Availability</h3>
+          <p>Local helpers sign up with verification, set task categories they offer (e.g., airport pickup, document translation), define their hourly rate or fixed fee, and mark availability on a calendar.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Task Management & Confirmation</h3>
+          <p>Helpers receive task requests with details, can accept/decline, and both parties get real-time updates; includes in-app chat for coordination.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Secure Payment & Escrow</h3>
+          <p>Payment is held in escrow until task completion; expat confirms completion, then funds are released to helper minus platform fee. Supports multiple currencies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section style="background: #f0f2f8;">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Create your profile</h3>
+          <p>Sign up as an expat or a local helper. Complete verification and set your preferences, languages, and availability.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Browse or list tasks</h3>
+          <p>Expats search for helpers by task type and location. Helpers list their services with fixed fees or hourly rates.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Book, complete, get paid</h3>
+          <p>Book a helper, communicate via chat, and confirm completion. Payment is released securely from escrow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to feel at home?</h2>
+      <p>Join CityMate and get the help you need, from the people who know the city best.</p>
+      <a href="#" class="cta-button">Get started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <span>CityMate – connecting expats and local helpers, one task at a time.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
