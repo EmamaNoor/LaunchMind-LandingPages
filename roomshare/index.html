@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RoomShare</title>
+  <title>RoomShare - Monetize Unused Conference Rooms</title>
   <style>
     * {
       margin: 0;
@@ -12,10 +12,10 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
       color: #1a1a2e;
+      background-color: #ffffff;
       line-height: 1.6;
-      background: #f9fafb;
     }
 
     .container {
@@ -26,41 +26,43 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
       color: #ffffff;
-      padding: 100px 0 80px;
+      padding: 80px 0 100px;
       text-align: center;
     }
 
     .hero h1 {
       font-size: 3rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 20px;
-      line-height: 1.2;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 680px;
-      margin: 0 auto 40px;
+      font-size: 1.25rem;
       opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto 32px;
     }
 
     .hero .cta-button {
       display: inline-block;
-      background: #3b82f6;
-      color: #fff;
-      padding: 16px 48px;
-      border-radius: 50px;
+      background-color: #e94560;
+      color: #ffffff;
       font-size: 1.1rem;
       font-weight: 600;
+      padding: 14px 40px;
+      border-radius: 40px;
       text-decoration: none;
-      transition: background 0.2s ease;
+      transition: background-color 0.2s ease;
     }
 
     .hero .cta-button:hover {
-      background: #2563eb;
+      background-color: #d63850;
     }
 
     /* Sections */
@@ -73,7 +75,7 @@
       font-weight: 700;
       text-align: center;
       margin-bottom: 48px;
-      color: #1a1a2e;
+      color: #0f3460;
     }
 
     /* Features */
@@ -84,42 +86,38 @@
     }
 
     .feature-card {
-      background: #ffffff;
+      background: #f8f9fa;
       border-radius: 16px;
       padding: 32px 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transition: box-shadow 0.2s ease;
     }
 
     .feature-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     .feature-card h3 {
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 12px;
-      color: #1a1a2e;
+      color: #0f3460;
     }
 
     .feature-card p {
-      color: #4b5563;
+      color: #4a4a5a;
       font-size: 0.95rem;
     }
 
     /* How it works */
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 40px;
       text-align: center;
     }
 
     .step {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 32px 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      position: relative;
     }
 
     .step-number {
@@ -128,30 +126,29 @@
       justify-content: center;
       width: 48px;
       height: 48px;
-      background: #3b82f6;
-      color: #fff;
-      border-radius: 50%;
+      background-color: #0f3460;
+      color: #ffffff;
+      font-size: 1.25rem;
       font-weight: 700;
-      font-size: 1.2rem;
+      border-radius: 50%;
       margin-bottom: 16px;
     }
 
     .step h3 {
       font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #1a1a2e;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0f3460;
     }
 
     .step p {
-      color: #4b5563;
+      color: #4a4a5a;
       font-size: 0.95rem;
     }
 
-    /* CTA section */
+    /* CTA */
     .cta-section {
-      background: #1a1a2e;
-      color: #ffffff;
+      background: #f0f2f5;
       text-align: center;
       padding: 80px 0;
     }
@@ -159,117 +156,117 @@
     .cta-section h2 {
       font-size: 2rem;
       font-weight: 700;
+      color: #0f3460;
       margin-bottom: 16px;
     }
 
     .cta-section p {
       font-size: 1.1rem;
-      opacity: 0.9;
-      margin-bottom: 36px;
-      max-width: 600px;
+      color: #4a4a5a;
+      margin-bottom: 32px;
+      max-width: 550px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .cta-section .cta-button {
       display: inline-block;
-      background: #3b82f6;
-      color: #fff;
-      padding: 16px 48px;
-      border-radius: 50px;
+      background-color: #e94560;
+      color: #ffffff;
       font-size: 1.1rem;
       font-weight: 600;
+      padding: 14px 40px;
+      border-radius: 40px;
       text-decoration: none;
-      transition: background 0.2s ease;
+      transition: background-color 0.2s ease;
     }
 
     .cta-section .cta-button:hover {
-      background: #2563eb;
+      background-color: #d63850;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
+    /* Footer */
+    footer {
+      background: #1a1a2e;
+      color: #a0a0b0;
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
       .hero p {
         font-size: 1rem;
       }
 
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 60px 0;
+      .section-title {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
   <!-- Hero -->
-  <header class="hero">
+  <section class="hero">
     <div class="container">
-      <h1>Monetize empty conference rooms. Book affordable spaces instantly.</h1>
-      <p>RoomShare connects office buildings with nearby freelancers to monetize unused conference rooms during off-peak hours, providing affordable, professional meeting spaces on demand.</p>
-      <a href="#" class="cta-button">Get early access</a>
+      <h1>Turn empty conference rooms into revenue.</h1>
+      <p>RoomShare connects office buildings with nearby freelancers to monetize unused conference rooms during off-peak hours, providing affordable, professional workspaces on demand.</p>
+      <a href="#" class="cta-button">List your rooms</a>
     </div>
-  </header>
+  </section>
 
   <!-- Features -->
   <section>
     <div class="container">
-      <h2 class="section-title">Key features</h2>
+      <h2 class="section-title">Key Features</h2>
       <div class="features-grid">
         <div class="feature-card">
-          <h3>Real-Time Availability Dashboard</h3>
-          <p>Interactive map and list view showing nearby buildings with available rooms, filtered by time, capacity, amenities, and price.</p>
+          <h3>Room Discovery and Booking</h3>
+          <p>Freelancers can browse nearby buildings, view room photos, amenities, and book instantly with calendar integration.</p>
         </div>
         <div class="feature-card">
-          <h3>Instant Booking & Payment</h3>
-          <p>Seamless booking flow with one-click reservation and secure payment (per hour or half-day), integrated with Stripe.</p>
+          <h3>Real-Time Availability</h3>
+          <p>Live syncing with building management systems to show up-to-the-minute open slots and prevent double bookings.</p>
         </div>
         <div class="feature-card">
-          <h3>Smart Onboarding for Buildings</h3>
-          <p>Step-by-step wizard to register building, add rooms with photos/amenities, set availability windows, and define cancellation policies.</p>
+          <h3>Pricing Model</h3>
+          <p>Flexible hourly and daily rates set by building managers, with dynamic pricing for peak vs. off-peak hours.</p>
         </div>
         <div class="feature-card">
-          <h3>User Ratings & Reviews</h3>
-          <p>Post-session rating system for both freelancers and rooms, with verified reviews to build trust and quality.</p>
+          <h3>Verification for Building Access</h3>
+          <p>Secure identity verification (ID upload, social login) and QR-code-based entry to ensure only confirmed users enter.</p>
         </div>
         <div class="feature-card">
-          <h3>Cancellation & Refund Engine</h3>
-          <p>Configurable cancellation windows (e.g., 2-hour free cancel, 50% refund within 1 hour) with automated refunds and notifications.</p>
+          <h3>Cancellation Policy</h3>
+          <p>Clear, tiered cancellation rules (free up to 2 hours before, partial refund after) with automated reminders.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How it Works -->
-  <section style="background: #f1f5f9;">
+  <!-- How It Works -->
+  <section style="background: #f8f9fa;">
     <div class="container">
-      <h2 class="section-title">How it works</h2>
+      <h2 class="section-title">How It Works</h2>
       <div class="steps-grid">
         <div class="step">
           <div class="step-number">1</div>
-          <h3>Buildings set availability</h3>
-          <p>Property managers register their building, add rooms, and set off-peak hours (evenings, weekends) to earn extra revenue without disrupting tenants.</p>
+          <h3>List your rooms</h3>
+          <p>Building managers set off-peak pricing and automatically list available rooms to generate passive income.</p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
-          <h3>Freelancers find and book</h3>
-          <p>Freelancers search nearby rooms by time, capacity, and amenities. They book instantly with one click and pay securely via Stripe.</p>
+          <h3>Browse and book</h3>
+          <p>Freelancers find nearby conference rooms, view real-time availability, and book instantly for any duration.</p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
-          <h3>Check in and work</h3>
-          <p>Automatic check-in via QR code at the building entrance gives freelancers secure access. After the session, both parties rate and review each other.</p>
+          <h3>Access and work</h3>
+          <p>Secure QR-code entry grants access. Use the room for meetings, deep work, or client presentations.</p>
         </div>
       </div>
     </div>
@@ -278,10 +275,17 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Ready to turn empty rooms into revenue?</h2>
-      <p>Join RoomShare today. Building managers earn from unused space, freelancers get professional meeting rooms on demand.</p>
+      <h2>Ready to turn idle space into income?</h2>
+      <p>Join building managers and freelancers who are already using RoomShare to make every room count.</p>
       <a href="#" class="cta-button">Get started</a>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 RoomShare. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
