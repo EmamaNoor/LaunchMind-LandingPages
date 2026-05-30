@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoamSpace – Book unused conference rooms on demand</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #1a1a2e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f4ff 0%, #e8edf9 100%);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #0a0a23;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #2d3a5e;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+
+    .hero .cta-btn {
+      display: inline-block;
+      background: #1a3a6b;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .hero .cta-btn:hover {
+      background: #2a4a7b;
+    }
+
+    /* Features */
+    .features {
+      padding: 72px 0 64px;
+      background: #ffffff;
+    }
+
+    .features h2,
+    .how-it-works h2,
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #0a0a23;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+
+    .feature-card {
+      background: #f7f9fc;
+      border-radius: 16px;
+      padding: 28px 24px;
+      flex: 1 1 260px;
+      max-width: 320px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a3a6b;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #2d3a5e;
+    }
+
+    /* How it works */
+    .how-it-works {
+      padding: 64px 0 72px;
+      background: #f0f4ff;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+
+    .step {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      flex: 1 1 240px;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .step .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #1a3a6b;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0a0a23;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #2d3a5e;
+    }
+
+    /* CTA section */
+    .cta-section {
+      padding: 72px 0 80px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .cta-section h2 {
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: #2d3a5e;
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    .cta-section .cta-btn {
+      display: inline-block;
+      background: #1a3a6b;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .cta-section .cta-btn:hover {
+      background: #2a4a7b;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5a6a7e;
+      border-top: 1px solid #e0e4ed;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .feature-grid, .steps {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature-card, .step {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1>RoamSpace</h1>
+      <p>Connect office buildings with freelancers to rent unused conference rooms during off-peak hours. Simple booking and secure payment included.</p>
+      <a href="#" class="cta-btn">Get started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Key features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Room Listing</h3>
+          <p>Building managers can add conference rooms with photos, capacity, amenities, and availability times.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Availability Calendar</h3>
+          <p>Real-time calendar showing open slots for each room, syncs with building manager's schedule.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Instant Booking</h3>
+          <p>Freelancers can search, filter, and book a room in seconds with instant confirmation.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Secure Payment</h3>
+          <p>Integrated payment system with transparent pricing, deposit for damages, and automated payout to building managers.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Access Verification</h3>
+          <p>QR code or PIN-based entry system to ensure only booked freelancers enter the building and room.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="number">1</div>
+          <h3>List your space</h3>
+          <p>Building managers add conference rooms with photos, capacity, and off-peak hours.</p>
+        </div>
+        <div class="step">
+          <div class="number">2</div>
+          <h3>Book instantly</h3>
+          <p>Freelancers search by location, capacity, and price, then book with instant confirmation.</p>
+        </div>
+        <div class="step">
+          <div class="number">3</div>
+          <h3>Access safely</h3>
+          <p>Receive a secure QR code or PIN after booking to enter the building and room.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to turn empty rooms into revenue?</h2>
+      <p>Join RoamSpace and start booking professional meeting spaces in minutes. No commitment required.</p>
+      <a href="#" class="cta-btn">Get started</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 RoamSpace. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
