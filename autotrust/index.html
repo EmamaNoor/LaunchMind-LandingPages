@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTrust – Buy and Sell Used Cars with Confidence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.5;
+            background-color: #f9f9fc;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            background-color: #1a1a2e;
+            color: #ffffff;
+            padding: 80px 0 70px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            color: #cfd8e6;
+        }
+
+        .hero .btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero .btn:hover {
+            background-color: #2563eb;
+        }
+
+        /* Sections */
+        section {
+            padding: 64px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 48px;
+            letter-spacing: -0.01em;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e9eef2;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* How it works */
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .step {
+            flex: 1 1 280px;
+            background: white;
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: center;
+            border: 1px solid #e9eef2;
+        }
+
+        .step .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: #3b82f6;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+
+        .step h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta {
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 70px 24px;
+        }
+
+        .cta h2 {
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            color: #cfd8e6;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta .btn:hover {
+            background-color: #2563eb;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: #6b7a8f;
+            font-size: 0.85rem;
+            background-color: #f0f2f6;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+                margin-bottom: 32px;
+            }
+            .features-grid {
+                gap: 20px;
+            }
+            .step {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <h1>Buy and Sell Used Cars with Total Confidence</h1>
+            <p>AutoTrust connects budget-conscious buyers with honest sellers. Every car comes with a verified history and a certified inspection, so you can trust the deal.</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section>
+        <div class="container">
+            <h2>Everything You Need to Trade with Trust</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Vehicle History Report</h3>
+                    <p>Automatically fetches and displays detailed vehicle history including accidents, ownership, and service records from trusted data sources.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Certified Pre-Owned Inspection</h3>
+                    <p>Offers a network of certified mechanics to perform on-site inspections and issue a quality seal for listed cars.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Price Analysis Tool</h3>
+                    <p>Shows historical pricing data and fair market value for similar models to help buyers and sellers make informed decisions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Verified User Reviews</h3>
+                    <p>Allows only verified transaction participants to leave reviews, ensuring authenticity and building trust in the community.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Secure Escrow Payment</h3>
+                    <p>Provides an escrow service that holds payment until the buyer confirms receipt and satisfaction with the vehicle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section style="background-color: #f0f2f6;">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>List or Browse</h3>
+                    <p>Sellers create a listing with photos and details. Buyers browse verified cars with full history and inspection reports.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Inspect and Agree</h3>
+                    <p>Schedule a certified on-site inspection. Use the price analysis tool to agree on a fair market price.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Pay and Drive</h3>
+                    <p>Funds are held securely in escrow. Once you confirm the car meets expectations, the seller gets paid and you drive away.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Find Your Next Car?</h2>
+            <p>Join thousands of buyers and sellers who trust AutoTrust for fair, transparent, and safe used car transactions.</p>
+            <a href="#" class="btn">Start Your Search</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            &copy; 2025 AutoTrust. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
