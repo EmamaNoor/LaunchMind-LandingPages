@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApplianceShare - Rent Kitchen Appliances by the Hour</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.6;
+      background-color: #f9f9fc;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: 80px 0 72px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.92;
+    }
+
+    /* Sections */
+    section {
+      padding: 72px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 48px;
+      color: #1a1a2e;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f3460;
+    }
+
+    .feature-card p {
+      color: #4a4a6a;
+    }
+
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      counter-reset: step;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: block;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      border-radius: 50%;
+      background: #0f3460;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 auto 20px;
+    }
+
+    .step h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a2e;
+    }
+
+    .step p {
+      color: #4a4a6a;
+      font-size: 0.95rem;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* CTA */
+    .cta {
+      background: #0f3460;
+      color: white;
+      text-align: center;
+      padding: 72px 0;
+    }
+
+    .cta h2 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      font-size: 1.15rem;
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 16px 48px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 14px rgba(233, 69, 96, 0.35);
+    }
+
+    .cta-button:hover {
+      background: #d63850;
+      transform: translateY(-2px);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a2e;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .step p {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero {
+        padding: 60px 0 48px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .cta-button {
+        padding: 14px 36px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1>Rent kitchen appliances from your neighbors.</h1>
+      <p>ApplianceShare enables neighbors to rent out their idle kitchen appliances by the hour, providing affordable access to specialty tools and generating extra income for owners.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Appliance Listing</h3>
+          <p>Owners can upload photos, set hourly rates, describe condition, and specify availability calendar.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Location-Based Search</h3>
+          <p>Renters can search for appliances by type, distance, and availability, with map integration.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Hourly Booking & Calendar</h3>
+          <p>Renters can book specific time slots, and owners manage bookings with a shared calendar.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Integrated Payment & Deposit</h3>
+          <p>Secure payment processing with hourly billing, security deposit hold, and automated release after return.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Liability & Insurance Coverage</h3>
+          <p>Built-in protection plan covering damage, theft, or accidents during rental period, with clear terms for both parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #f0f2f8;">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>List or Browse</h3>
+          <p>Owners post their idle appliances with photos and rates. Renters search nearby for what they need.</p>
+        </div>
+        <div class="step">
+          <h3>Book by the Hour</h3>
+          <p>Choose available time slots, pay securely, and a security deposit is held automatically.</p>
+        </div>
+        <div class="step">
+          <h3>Use and Return</h3>
+          <p>Pick up the appliance, use it worry-free with insurance coverage, and return it on time. Payment is released to the owner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Start sharing today.</h2>
+      <p>List your unused appliances or rent what you need from neighbors nearby.</p>
+      <a href="#" class="cta-button">Get Started</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 ApplianceShare. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
