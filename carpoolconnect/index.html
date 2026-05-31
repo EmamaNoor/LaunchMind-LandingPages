@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarpoolConnect – Smart Ride Matching</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.6;
+            background-color: #f8f9fc;
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            padding: 80px 0 72px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .hero .subhead {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 680px;
+            margin: 0 auto 32px;
+        }
+        .hero .cta-button {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 16px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .hero .cta-button:hover {
+            background: #d63851;
+        }
+        /* Sections */
+        section {
+            padding: 72px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 48px;
+            color: #0f3460;
+        }
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #16213e;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #4a4a6a;
+        }
+        /* How it works */
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .step {
+            flex: 1 1 260px;
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .step .step-number {
+            display: inline-block;
+            background: #0f3460;
+            color: white;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #16213e;
+        }
+        .step p {
+            color: #4a4a6a;
+            font-size: 0.95rem;
+        }
+        /* CTA */
+        .cta-section {
+            background: #16213e;
+            color: white;
+            text-align: center;
+            padding: 72px 0;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        .cta-section .cta-button {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 16px 44px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .cta-section .cta-button:hover {
+            background: #d63851;
+        }
+        /* Footer */
+        footer {
+            background: #0f3460;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 24px 0;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero .subhead { font-size: 1rem; }
+            .section-title { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>CarpoolConnect</h1>
+            <p class="subhead">A smart ride-matching platform that helps daily commuters, parents, and students share rides efficiently while splitting costs and ensuring safety.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Ride Matching</h3>
+                    <p>Algorithm that pairs drivers and riders based on route, schedule, and preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Scheduling</h3>
+                    <p>Calendar-based system to set recurring or one-time rides with reminders.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Payment Splitting</h3>
+                    <p>Automated cost calculation and secure payment splitting among riders.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Safety Verification</h3>
+                    <p>User identity verification via ID upload, driver license check, and rating system.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Real-Time Tracking</h3>
+                    <p>Live GPS tracking of the ride for all participants with estimated arrival updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f0f2f8;">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Profile</h3>
+                    <p>Sign up and verify your identity. Set your home and work or school locations.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Match & Schedule</h3>
+                    <p>Find riders or drivers along your route. Choose a recurring or one-time schedule.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Ride & Split Costs</h3>
+                    <p>Track your ride in real time. Share fuel costs automatically and securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Sharing Your Ride Today</h2>
+            <p>Reduce costs, save time, and travel safely with CarpoolConnect.</p>
+            <a href="#" class="cta-button">Join CarpoolConnect</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 CarpoolConnect. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
