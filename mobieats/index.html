@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MobiEats – One Tap for Rides and Food</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a2e;
+      background-color: #ffffff;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+      color: #ffffff;
+      padding: 80px 24px 72px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.88;
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+
+    .hero .cta-btn {
+      display: inline-block;
+      background: #e94560;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 14px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .hero .cta-btn:hover {
+      background: #d63850;
+    }
+
+    /* Section base */
+    section {
+      padding: 72px 24px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+      color: #0f3460;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: #f8f9fc;
+      border-radius: 16px;
+      padding: 32px 24px;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(15, 52, 96, 0.08);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0f3460;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #3d3d5c;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .step {
+      flex: 1 1 260px;
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #0f3460;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0f3460;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #3d3d5c;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #0f3460;
+      color: #ffffff;
+      text-align: center;
+      padding: 72px 24px;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      margin-bottom: 32px;
+    }
+
+    .cta-section .cta-btn {
+      display: inline-block;
+      background: #e94560;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 14px 44px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cta-section .cta-btn:hover {
+      background: #d63850;
+    }
+
+    /* Footer */
+    .footer {
+      background: #16213e;
+      color: #a0aec0;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .steps {
+        gap: 32px;
+      }
+
+      .cta-section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Order food. Book a ride. One app.</h1>
+      <p>MobiEats lets you pay for your ride and food together, with unified payments and smart cross-promotions. Drivers and restaurants get onboarded fast.</p>
+      <a href="#" class="cta-btn">Get started</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Everything you need in one place</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Unified Checkout</h3>
+          <p>Pay for a ride and a food order in a single transaction using any saved payment method.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Cross-Promotion Engine</h3>
+          <p>Automatically offer discounts on food orders when a ride is booked, or vice versa, based on user history and location.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Streamlined Onboarding</h3>
+          <p>A single application process for drivers and restaurant partners to sign up, verify documents, and start serving quickly.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Real-Time Order Tracking</h3>
+          <p>Combined ETA for ride and food delivery, with live map updates for both services in one view.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Partner Dashboard</h3>
+          <p>A unified dashboard for restaurant and driver partners to manage orders, earnings, and promotional campaigns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section style="background: #f8f9fc;">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Sign up once</h3>
+          <p>Create a single account for rides and food. Add your payment method and preferences.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Combine your order</h3>
+          <p>Book a ride and order food from your favorite restaurant. Get smart discounts automatically.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Pay and track together</h3>
+          <p>Complete one payment. Follow your ride and food delivery on a single live map.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to simplify your commute and meals?</h2>
+      <p>Join MobiEats today. Drivers and restaurant partners can activate in minutes.</p>
+      <a href="#" class="cta-btn">Get started</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      &copy; 2025 MobiEats. All rights reserved.
+    </div>
+  </div>
+
+</body>
+</html>
