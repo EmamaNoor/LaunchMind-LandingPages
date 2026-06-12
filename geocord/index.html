@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoCord – Location-Based Discord Servers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #0f0f12;
+      color: #e1e1e6;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      background: linear-gradient(180deg, #1a1a2e 0%, #0f0f12 100%);
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #7289da, #5865f2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #a0a0b0;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .hero .cta-button {
+      display: inline-block;
+      background: #5865f2;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .hero .cta-button:hover {
+      background: #4752c4;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 48px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: #1c1c24;
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: #a0a0b0;
+      font-size: 0.95rem;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .step {
+      flex: 1 1 240px;
+      max-width: 320px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #5865f2;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin: 0 auto 20px;
+    }
+
+    .step h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #a0a0b0;
+      font-size: 0.95rem;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a2e, #2a2a3e);
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .cta-section h2 {
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      color: #a0a0b0;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+
+    .cta-section .cta-button {
+      display: inline-block;
+      background: #5865f2;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cta-section .cta-button:hover {
+      background: #4752c4;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: #6b6b7a;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .features-grid {
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Join Discord servers <span>based on where you are</span></h1>
+      <p>GeoCord automatically adds and removes members based on physical proximity, enabling temporary communities for commuters, event attendees, and neighbors.</p>
+      <a href="#" class="cta-button">Get Started with GeoCord</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Geofenced Auto-Join</h3>
+          <p>Users are automatically added to the server when their device enters a predefined geographic area, and removed when they leave.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Proximity-Based Channels</h3>
+          <p>Channels are generated dynamically based on sub-locations within the geofence (e.g., train car, conference hall).</p>
+        </div>
+        <div class="feature-card">
+          <h3>Time-Limited History</h3>
+          <p>Messages are automatically deleted after a set period (e.g., 24 hours) to ensure privacy and reduce clutter.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Opt-Out and Privacy Controls</h3>
+          <p>Users can manually leave the server, disable auto-join, or set a 'do not disturb' mode while still in range.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Moderation by Organizers</h3>
+          <p>Event or area organizers can assign moderators, pin messages, and set rules that persist during the server's lifetime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section style="background: #14141a;">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Define a Geofence</h3>
+          <p>Organizers set a geographic boundary around a train, event venue, or neighborhood. GeoCord handles the rest.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Auto-Join on Arrival</h3>
+          <p>When a user enters the area, they are automatically added to the server. No manual search or invite needed.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Auto-Leave on Departure</h3>
+          <p>Once the user leaves the geofence, they are removed from the server. No clutter, no spam, no permanent groups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to build location-based communities?</h2>
+      <p>Stop managing permanent groups. Let GeoCord handle membership so you can focus on real-time conversations.</p>
+      <a href="#" class="cta-button">Get Started with GeoCord</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2025 GeoCord. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
