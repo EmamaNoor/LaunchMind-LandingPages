@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrandMatch – Data-Driven Influencer Collaborations</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      color: #111827;
+      background-color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0b1121 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 80px 0 72px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 640px;
+      margin: 0 auto 0;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Features */
+    .features {
+      padding: 80px 0;
+      background: #f8fafc;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* How it works */
+    .how-it-works {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px 80px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .step {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #0b1121;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 72px 0;
+      background: linear-gradient(135deg, #0b1121 0%, #1e293b 100%);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #ffffff;
+      color: #0b1121;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    .cta-button:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      background: #0b1121;
+      color: #94a3b8;
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+      }
+      .steps {
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>BrandMatch: Find the right influencer. Build real partnerships.</h1>
+      <p>A data-driven matchmaking platform that connects brands with relevant influencers for authentic, measurable collaborations.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Everything you need to collaborate with confidence</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Profile Creation</h3>
+          <p>Brands and influencers create detailed profiles with bio, niche, audience demographics, past collaborations, and portfolio links.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Advanced Search &amp; Filters</h3>
+          <p>Brands search by niche, location, follower count, engagement rate, and audience demographics. Influencers filter by industry, budget, and campaign type.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Smart Matching Algorithm</h3>
+          <p>AI suggests compatible brand-influencer pairs based on profile data, past collaboration success, and campaign requirements.</p>
+        </div>
+        <div class="feature-card">
+          <h3>In-App Messaging</h3>
+          <p>Secure messaging system for discussing collaboration terms, negotiating rates, and sharing campaign briefs.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Collaboration Management</h3>
+          <p>Create, track, and manage projects including deliverables, deadlines, payment terms, and content approvals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Create your profile</h3>
+          <p>Brands and influencers build detailed profiles showcasing their niche, audience, and past work.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Get matched</h3>
+          <p>Our AI suggests the best brand-influencer pairs based on compatibility and campaign goals.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Collaborate &amp; track</h3>
+          <p>Use in-app messaging and project management tools to negotiate, execute, and measure success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to find your next partnership?</h2>
+      <p>Join brands and influencers who are building authentic, measurable collaborations.</p>
+      <a href="#" class="cta-button">Get started with BrandMatch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      &copy; 2025 BrandMatch. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
