@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RouteEats - Unified Ridesharing & Food Delivery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a2e;
+      background: #ffffff;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+      color: #ffffff;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 680px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+
+    .hero .cta-button {
+      display: inline-block;
+      background: #e94560;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+      border: none;
+      cursor: default;
+    }
+
+    .hero .cta-button:hover {
+      background: #d63851;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    /* Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: #f9f9fc;
+      border-radius: 16px;
+      padding: 32px 24px;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .feature-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #e94560;
+      color: #fff;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      counter-reset: step;
+    }
+
+    .step {
+      flex: 1 1 280px;
+      max-width: 340px;
+      text-align: center;
+      position: relative;
+      padding-top: 60px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 48px;
+      background: #0f3460;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: #f2f5fc;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section .cta-button {
+      display: inline-block;
+      background: #0f3460;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 16px 44px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s;
+      border: none;
+      cursor: default;
+    }
+
+    .cta-section .cta-button:hover {
+      background: #1a4b7a;
+    }
+
+    /* Footer */
+    footer {
+      background: #16213e;
+      color: #aab8d0;
+      text-align: center;
+      padding: 32px 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Ride and eat. One app. One trip.</h1>
+      <p>RouteEats is a unified platform for urban commuters and busy individuals to book ridesharing and food delivery through a single app, leveraging a shared driver network to optimize routes, reduce costs, and save time.</p>
+      <a class="cta-button" href="#" role="button">Get early access</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Everything you need in one place</h2>
+      <p class="section-subtitle">No more switching between apps. RouteEats combines your ride and food order into a single seamless experience.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">U</div>
+          <h3>Unified Booking</h3>
+          <p>Allows users to book a ride and order food simultaneously in a single transaction, with options to combine or separate deliveries.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">S</div>
+          <h3>Shared Driver Pool</h3>
+          <p>Drivers can accept both ride and delivery requests, dynamically switching roles based on demand and proximity.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">R</div>
+          <h3>Route Optimization</h3>
+          <p>AI-driven algorithm that optimizes driver routes to minimize detours and costs when handling combined ride and delivery tasks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">T</div>
+          <h3>Real-Time Tracking</h3>
+          <p>Provides live map updates for both ride and food delivery status, including estimated arrival times and driver location.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">D</div>
+          <h3>Dynamic Pricing</h3>
+          <p>Adjusts prices based on demand, distance, and combined service discounts, offering transparent fare breakdowns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #f9f9fc;">
+    <div class="container">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-subtitle">Get your ride and your meal in three simple steps.</p>
+      <div class="steps">
+        <div class="step">
+          <h3>Choose your ride and meal</h3>
+          <p>Select your destination and pick your food from local restaurants. Combine them in one order or keep them separate.</p>
+        </div>
+        <div class="step">
+          <h3>Get matched with a driver</h3>
+          <p>Our system pairs you with a nearby driver who can handle both your ride and delivery, optimizing the route in real time.</p>
+        </div>
+        <div class="step">
+          <h3>Enjoy the ride and eat</h3>
+          <p>Track your driver live. Your food arrives when you do, or we deliver it separately. No waiting, no hassle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to simplify your commute?</h2>
+      <p>Join thousands of users who save time and money with RouteEats. Sign up today.</p>
+      <a class="cta-button" href="#" role="button">Get started free</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 RouteEats. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
