@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMentor – Bridge the gap between academic knowledge and real-world coding</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1a1a2e;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9ff 0%, #eef0ff 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #4a4a6a;
+            max-width: 680px;
+            margin: 0 auto 32px;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            background: #4f46e5;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 14px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .hero .cta-button:hover {
+            background: #4338ca;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 48px;
+            color: #1a1a2e;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+
+        .feature-card p {
+            color: #4a4a6a;
+            font-size: 0.95rem;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 80px 0;
+            background: #f8f9ff;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 48px;
+            color: #1a1a2e;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .step {
+            flex: 1 1 240px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #4f46e5;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 16px;
+        }
+
+        .step h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+
+        .step p {
+            color: #4a4a6a;
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            background: #1a1a2e;
+            color: #ffffff;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #c7c7e0;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .cta-button {
+            display: inline-block;
+            background: #4f46e5;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 14px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .cta-section .cta-button:hover {
+            background: #6366f1;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 24px 0;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+            background: #ffffff;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>From classroom code to career-ready.</h1>
+            <p>CodeMentor helps fresh CS/IT graduates bridge the gap between academic knowledge and real-world coding by providing interactive, AI-powered tutoring, project-based learning, and career preparation.</p>
+            <a href="#" class="cta-button">Get started for free</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Everything you need to level up</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Interactive Code Tutoring</h3>
+                    <p>Claude provides step-by-step guidance, explains concepts, and answers coding questions in real-time within an integrated editor.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Real-Time Feedback</h3>
+                    <p>As users write code, the system instantly analyzes syntax, logic, and style, offering suggestions and corrections.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Project-Based Learning Paths</h3>
+                    <p>Curated, multi-module projects (e.g., building a REST API, a to-do app) that guide users from planning to deployment with mentorship.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Automated Code Review</h3>
+                    <p>Simulates a senior developer code review, highlighting issues like code smell, security flaws, and optimization opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Career Prep Toolkit</h3>
+                    <p>Includes mock coding interviews, resume feedback, and tips on technical interview strategies tailored to the user's skill level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Pick a path</h3>
+                    <p>Choose a project or skill track that matches your goals. Start with a REST API, a to-do app, or a coding interview prep module.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Code with guidance</h3>
+                    <p>Write code in the integrated editor. Get instant feedback, step-by-step hints, and real-time corrections from your AI tutor.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Review and improve</h3>
+                    <p>Submit your project for an automated code review. Learn best practices, fix issues, and build a portfolio you can show employers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start building real skills today.</h2>
+            <p>Join thousands of graduates who are closing the gap between theory and practice. No waiting for a mentor, just you and your code.</p>
+            <a href="#" class="cta-button">Try CodeMentor free</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            &copy; 2025 CodeMentor. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
