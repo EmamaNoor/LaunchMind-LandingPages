@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CliniCore | Clinic Management System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a202c;
+      line-height: 1.6;
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      padding: 20px 0;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f4c81;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #4a90e2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #0f4c81;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      padding: 80px 0 64px;
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0f4c81;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #4a5568;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-weight: 400;
+    }
+
+    .hero-cta {
+      background: #0f4c81;
+      color: #ffffff;
+      border: none;
+      padding: 14px 36px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .hero-cta:hover {
+      background: #0a3a63;
+      transform: translateY(-2px);
+    }
+
+    /* Features */
+    .features {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      color: #1a202c;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #718096;
+      font-size: 18px;
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 32px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: inline-block;
+      background: #e6f0fa;
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0f4c81;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: #4a5568;
+      font-size: 15px;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      background: #f7fafc;
+      padding: 80px 0;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #0f4c81;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      color: #4a5568;
+      font-size: 15px;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 80px 0;
+      background: #0f4c81;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-section p {
+      color: #cbd5e0;
+      font-size: 18px;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      background: #ffffff;
+      color: #0f4c81;
+      border: none;
+      padding: 14px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background: #edf2f7;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: #1a202c;
+      color: #a0aec0;
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    footer .logo {
+      color: #ffffff;
+      margin-bottom: 12px;
+      display: block;
+      font-size: 20px;
+    }
+
+    footer .logo span {
+      color: #4a90e2;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">Clini<span>Core</span></div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#cta">Get Started</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Clinic management that puts patients first</h1>
+      <p>CliniCore is a cloud-based clinic management system that streamlines appointment scheduling, patient records, billing, and inventory for small to medium-sized clinics, enabling staff to focus on patient care.</p>
+      <a href="#cta" class="hero-cta">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Everything your clinic needs</h2>
+      <p class="section-subtitle">Tools designed to reduce administrative burden and improve patient outcomes.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Appointment Scheduling</h3>
+          <p>Online booking, calendar management, automated reminders, and waitlist management to reduce no-shows and optimize doctor time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3>Electronic Health Records (EHR)</h3>
+          <p>Secure digital patient charts with visit history, medications, allergies, and lab results, accessible from any device.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Billing & Invoicing</h3>
+          <p>Generate invoices, process payments, track claims, and manage insurance billing to streamline revenue cycle.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>Inventory Management</h3>
+          <p>Track medical supplies and medications, set reorder alerts, and manage stock levels to prevent shortages.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Reporting & Analytics</h3>
+          <p>Customizable dashboards and reports on key metrics like patient volume, revenue, and appointment utilization for data-driven decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Get your clinic running on CliniCore in three simple steps.</p>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Set Up Your Clinic</h3>
+          <p>Create your clinic profile, add your staff, and customize your services and hours in minutes.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Migrate Your Records</h3>
+          <p>Import your existing patient records and schedules securely, or start fresh with our easy-to-use tools.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Go Live</h3>
+          <p>Start scheduling appointments, managing billing, and tracking inventory. Your team will be up and running the same day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <h2>Ready to focus on patient care?</h2>
+      <p>Join clinics that have simplified their operations with CliniCore.</p>
+      <a href="#" class="cta-button">Book a Demo</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <span class="logo">Clini<span>Core</span></span>
+      <p>Cloud-based clinic management for small to medium-sized clinics.</p>
+      <p>&copy; 2024 CliniCore. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
