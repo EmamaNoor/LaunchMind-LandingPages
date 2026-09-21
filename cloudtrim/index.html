@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudTrim | Automatically Reduce AWS Costs</title>
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --ink: #0f172a;
+    --ink-soft: #475569;
+    --line: #e2e8f0;
+    --bg: #ffffff;
+    --bg-soft: #f8fafc;
+    --accent: #0d9488;
+    --accent-dark: #0f766e;
+    --accent-tint: #ccfbf1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+  }
+
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), #14b8a6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-dark);
+  }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(900px 420px at 80% -10%, rgba(20, 184, 166, 0.14), transparent 60%),
+      radial-gradient(700px 380px at 0% 0%, rgba(13, 148, 136, 0.08), transparent 55%),
+      var(--bg-soft);
+    border-bottom: 1px solid var(--line);
+    padding: 88px 0 96px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    background: var(--accent-tint);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    max-width: 15ch;
+  }
+
+  .subhead {
+    margin-top: 22px;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
+  .hero-actions {
+    margin-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    padding: 13px 26px;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  .hero-stats {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 720px;
+  }
+
+  .stat {
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  .stat strong {
+    display: block;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+
+  .stat span {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+
+  /* Sections */
+  section {
+    padding: 84px 0;
+  }
+
+  .section-head {
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3.4vw, 2.15rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .section-head p {
+    margin-top: 14px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+
+  /* Features */
+  .features {
+    background: var(--bg);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 26px;
+    background: var(--bg);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .card:hover {
+    border-color: #99f6e4;
+    box-shadow: 0 10px 30px -18px rgba(13, 148, 136, 0.5);
+  }
+
+  .card-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--accent-tint);
+    color: var(--accent-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .card h3 {
+    font-size: 1.06rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+  }
+
+  /* How it works */
+  .how {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    counter-reset: step;
+  }
+
+  .step {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 30px 26px;
+    position: relative;
+  }
+
+  .step-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .step h3 {
+    font-size: 1.06rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .step p {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 96px 0;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%);
+    border-radius: 20px;
+    padding: 64px 48px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .cta-box h2 {
+    color: #fff;
+    max-width: 22ch;
+    margin: 0 auto;
+  }
+
+  .cta-box p {
+    margin: 18px auto 0;
+    max-width: 58ch;
+    color: #cbd5e1;
+    font-size: 1.02rem;
+  }
+
+  .cta-box .btn {
+    margin-top: 32px;
+    background: #ffffff;
+    color: var(--ink);
+    border: 1px solid #ffffff;
+    padding: 14px 32px;
+  }
+
+  .cta-box .btn:hover {
+    background: var(--accent-tint);
+    border-color: var(--accent-tint);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 34px 0;
+    background: var(--bg);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 720px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hero {
+      padding: 64px 0 72px;
+    }
+
+    .hero-stats {
+      grid-template-columns: 1fr;
+      margin-top: 44px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .cta-box {
+      padding: 48px 26px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="logo-mark">CT</span>
+      CloudTrim
+    </div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How it Works</a></li>
+      <li><a href="#cta">Get Started</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">AWS Cost Optimization</span>
+      <h1>Cut your AWS bill without slowing your team down.</h1>
+      <p class="subhead">CloudTrim helps DevOps, finance, and engineering leaders automatically reduce AWS costs through anomaly detection, rightsizing, and automated savings actions.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#cta">Start Saving on AWS</a>
+        <a class="btn btn-ghost" href="#how">See How it Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>Anomaly Detection</strong>
+          <span>Alerts via Slack, email, or PagerDuty the moment spending shifts.</span>
+        </div>
+        <div class="stat">
+          <strong>Rightsizing</strong>
+          <span>Optimal instance types with projected savings and one-click apply.</span>
+        </div>
+        <div class="stat">
+          <strong>Automated Actions</strong>
+          <span>Idle instances stopped and unattached volumes deleted for you.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Everything you need to control cloud spend</h2>
+        <p>Six capabilities that cover detection, optimization, commitment management, and reporting across your AWS accounts.</p>
+      </div>
+      <div class="feature-grid">
+
+        <div class="card">
+          <div class="card-icon">01</div>
+          <h3>Cost Anomaly Detection</h3>
+          <p>Automatically detects unusual spending patterns using machine learning and sends alerts via Slack, email, or PagerDuty.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">02</div>
+          <h3>Rightsizing Recommendations</h3>
+          <p>Analyzes usage metrics to recommend optimal instance types and sizes, with projected savings and one-click apply.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">03</div>
+          <h3>Reserved Instance (RI) Management</h3>
+          <p>Tracks RI utilization and coverage, recommends purchases, and automates RI exchanges and modifications.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">04</div>
+          <h3>Automated Savings Actions</h3>
+          <p>Executes predefined actions like stopping idle instances, deleting unattached volumes, and scheduling start/stop times.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">05</div>
+          <h3>Cost Allocation and Tagging</h3>
+          <p>Enforces tagging policies, provides cost breakdown by team, project, or environment, and enables chargeback/showback.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">06</div>
+          <h3>Savings Dashboard and Reporting</h3>
+          <p>Visualizes cost trends, savings achieved, and forecasted spend with customizable reports for stakeholders.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it Works</h2>
+        <p>From connection to savings in three steps, with no changes to how your team ships software.</p>
+      </div>
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Connect your AWS accounts</h3>
+          <p>CloudTrim reads your usage metrics and billing data, then builds a cost breakdown by team, project, and environment.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Review recommendations and alerts</h3>
+          <p>See anomaly alerts, rightsizing recommendations, and RI purchase guidance with projected savings attached to each one.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Apply savings actions</h3>
+          <p>Approve changes in one click, or let automated actions stop idle instances and clean up unattached volumes on a schedule.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="cta">
+    <div class="wrap">
+      <div class="cta-box">
+        <h2>Take control of your AWS bill today</h2>
+        <p>Give DevOps, finance, and engineering leaders one shared view of spend, savings, and forecasts. Connect your first account and see where the waste is.</p>
+        <a class="btn" href="#cta">Get Started with CloudTrim</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="logo">
+      <span class="logo-mark">CT</span>
+      CloudTrim
+    </div>
+    <span>Automated AWS cost reduction for DevOps, finance, and engineering teams.</span>
+  </div>
+</footer>
+
+</body>
+</html>
